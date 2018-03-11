@@ -31,7 +31,7 @@
                 if($count > 0)  
                 {  
                      $_SESSION["email"] = $_POST["email"];  
-                     header("location:login_usersuccess.php");  //opens user page if user details match
+                     header("location:index.php");  //opens user page if user details match
                 }  
                 else  
                 {  

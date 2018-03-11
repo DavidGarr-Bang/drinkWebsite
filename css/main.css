@@ -49,6 +49,7 @@ padding: 14px 16px;
 }
 
 nav a:hover {
+/*  background: #000;*/
     color: #1aa6c9;
     
 }
@@ -189,6 +190,11 @@ td{
 
 
 
+
+
+
+
+
 body {
   background: white;
   font-family: 'Open Sans','PT Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -199,27 +205,23 @@ h1.title {
   margin: 0 0 30px;
 }
 .bucket {
-   
-    background:#fff;
-    float: left;
-    width: auto;
-    margin: 26px ;
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.4);
+  background:#fff;
+  width: 450px;
+  margin: 50px auto;
+  box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
 
 }
 
 .buffer {
-   padding: 10px;
-    
-    
+   padding: 40px;
 }
 
 header {
-   
+    position: fixed;
     width: 100%;
     padding-top: 40px;
     padding-bottom: 20px;
-  background: #000;
+  background: rgba(0,0,0,0.8);
   transition: 0.7s all;
   z-index: 100;
     color: white;
@@ -318,7 +320,7 @@ input.btn {
 100% { left: -400%; }
 }
 
-body { margin: 0; } 
+
 div#slider { overflow: hidden; }
 div#slider figure img { width: 20%; float: left; }
 div#slider figure { 
@@ -329,7 +331,6 @@ div#slider figure {
   text-align: left;
   font-size: 0;
   animation: 28s slidy infinite; 
-    color: #000;
 }
 
 .logo {
@@ -343,154 +344,115 @@ div#slider figure {
 
 
 
-ul, li, h2, h3, h4, h5, h6, p, a, .logo {
+ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
   font-family: "Lato","Verdana",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   margin: 0;
   padding: 0;
+   
 }
 
 
 .inner {
   width: 1400px;
+  
   position: relative;
   margin: 0 auto;
     
+    
+    
 }
 
-
-.pic {
-  
-  float:left;
-  position: relative;
-  width: 250px;
-  overflow: hidden;
-  border: solid 2px ;
-  box-shadow: 0px 10px 5px rgba(0,0,0,0.5)
-}
-
-.text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 250px;  
-  height: 0;
-  text-align: center;    
-  background: rgba( 26,166, 201, 0.7);
-  transition: height 0.7s ease-out;    
-}
-
-.pic:hover > .text {
-  height: 250px;
+.active {
+    color: #1aa6c9;
     
 }
 
 
-p.item_name {
-   color: white;
-    font-weight: bold;
-}
-
-p.item_dec {
-   color: white;
+.test {
+    background: #091221;
+    color: #fff;
+    height: 150px;
+    text-align: center;
+    margin-bottom: 20px;
     
+
 }
-
-
-@import url(https://fonts.googleapis.com/css?family=Archivo+Black);
-
-@media only screen and (max-device-width: 480px) {
-  .box {
-    margin: 20px;
-  }
-  .product-info {
-    margin: 20px;
-  }
-}
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  
-  font-family: 'Open Sans', sans-serif;
-}
-
-
-.box {
-  width: 700px;
-  border-radius: 10px;
-  
-}
-
-.product-img {
-  float: left;
-  margin-top: 20px;
-  transition: all 0.5s linear;
-    &:hover }
-      
-.product-img:hover {      
-    transform: scale(1.03); 
-}
-
-
-.product-info {
-  float: right;
-  margin-top: 20px;
-  margin-right: 40px;
-}
-
-h1 {
- 
-  font-weight: bold;
-  font-size: 2.5em;
-  color: #333;
-  font-family: 'Archivo Black', sans-serif;
-}
-
-.price {
-  margin-top: -40px;
-  font-size: 35px;
-  font-weight: bolder;
-  color: #1aa6c9;
-}
-
-.description {
-  margin-top: -20px;
-  margin-right: 10px;
-  font-weight: bold;
-  color: #555;
-}
-.color {
-  outline: none;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.quantity {
-    margin-top: 25px;
-  outline: none;
-  border: 2px solid #999;
-  padding: 5px;
-  border-radius: 5px;
-}
-button {
- 
-  background: #333;
-  font-size: 1em;
-  letter-spacing: .1em;
-  text-decoration: none;
-  color: #fff;
-  padding: 15px 30px;
-  border: 0;
-  border-radius: 19px;
-  transition: all 0.3s linear;
-  margin-left: 100px;
+.test2 {
+    padding-top: 20px;
+    background: #fff;
+    color:  #091221;
+text-align: center;
    
+     height: 200px;
+   
+
 }
 
-button:hover {
-    background: #666;
+
+body{
+   background:  #091221;;
+    
+}
+
+
+
+
+/* Section Styling */
+.section {
+  position: relative;
+  margin: 0px 0;
+  padding: 150px 50px;
+  text-align: center;
+ 
+}
+
+.section:after {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='100,0 100,100 0,100' style='fill:%23091221;' /%3E%3C/svg%3E");
+}
+
+.pattern {
+  background-image: url('http://dirtymartini.uk.com/wp-content/uploads/2015/12/Cocktails-new-2000x769-1.jpg');
+   height: 200%;
+     color: #fff;
+   
+    
+ 
+  
+  
+
+}
+@media screen and (max-width: 960px) {
+  .section {
+    padding: 100px 50px;
   }
+  .section:before {
+      height: 100px;
+  }
+  .section:after {
+      height: 100px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section {
+    margin: 50px 0 50px;
+    padding: 50px 50px;
+  }
+  .section:before {
+      height: 50px;
+  }
+  .section:after {
+      height: 50px;
+  }
+}

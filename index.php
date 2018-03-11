@@ -43,6 +43,7 @@ if(isset($_POST['add_to_cart'])) {
 		$_SESSION['shopping_cart'][$product_id]['product_id'] = $_POST['product_id'];
 		$_SESSION['shopping_cart'][$product_id]['quantity'] = $_POST['quantity'];
 		$message = "Added to cart!";
+        header("location:./index.php?view_cart=1"); 
 	}
 }
 // Update Cart
@@ -218,7 +219,10 @@ else {
     
         
         echo "<div class='pic'>";
-        echo "<a href='./index.php?view_product=$id'> " . $product['dinkIcon'] ." </a> ";
+       echo "<a href='./index.php?view_product=$id'> " . $product['dinkIcon'] ." </a> ";
+        
+         //    echo  "<a href='./index.php?view_product=$id'> "<img src= '. $product['dinkIcon'] .' width='200' height='200'/> </a>"";
+
         
         echo "<div class='text'>";
         
