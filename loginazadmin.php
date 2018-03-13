@@ -48,7 +48,7 @@
  <!DOCTYPE html>  
  <html>  
        <head>         
-                            <title>BeveragesDB</title>
+                            <title>Beverages Log in</title>
                             <meta charset="utf-8">
                             <!--  link to favicon -->
                             <link rel="shortcut icon" href="img/favicon.ico">
@@ -108,14 +108,7 @@
                         <!--  title of my page (heading text) -->
 <body>  
           
-            
-                <?php  
-                if(isset($message))  
-                {  
-                     echo '<label class="text-danger">'.$message.'</label>'; //error messages
-                }  
-                ?>  
-                 
+        
                <!-- <form method="post">  
                      <label>email</label>  
                      <input type="text" name="email" />  
@@ -144,6 +137,15 @@
         <input type="Password" name="Password" style= " width: 100%; "/>
           
         <button  style= " width: 100%; margin: 2em 0 0; " type="submit" name="login" value="Login" class="button button2">Sign in</button>
+          
+             <?php  
+                if(isset($message))  
+                {   
+       
+                     echo ' <h1 class="title">'.$message.'</h1>'; //error messages
+                    
+                }  
+                ?>
 
     
 <!--        <input type="submit" name="login" value="Login" />  -->

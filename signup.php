@@ -38,6 +38,12 @@ try
 
 
     $insert->execute();
+        
+          header("location:index.php");  
+        
+       //  $message = '<a class="button" href="#huzzah"></a>'; 
+        
+        
 }
 }
 catch(PDOException $error)
@@ -55,10 +61,17 @@ catch(PDOException $error)
                               <link rel="shortcut icon" href="img/favicon.ico">
                               <!-- link to style sheets --> 
                             <link rel="stylesheet" href="css/normalize.css">
-                            <link rel="stylesheet" href="css/nonfloatnew.css" type="text/css">
+                            <link rel="sheet" href="css/welcome-popup2.css">
+      
+      
+                          <link rel="stylesheet" href="css/nonfloatnew.css" type="text/css">
                             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                             <!-- link to style sheet for nav show-->
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Monospace" rel="stylesheet2">
+      
+      
                             <!-- link to javascript doc.-->
                             <SCRIPT SRC="js/azalea copy.js"></SCRIPT>
                  </head>
@@ -138,6 +151,10 @@ catch(PDOException $error)
 <!-- footer containing copyright  -->
     
     
+
+    
+    
+    
     <div class="bucket">
    <div class="buffer">
      <div class="header">
@@ -159,7 +176,7 @@ catch(PDOException $error)
         <label>Password</label>
         <input type="text" name="Password"  style= " width: 100%; "/>
           
-                    <button  style= " width: 100%; margin: 2em 0 0; " type="submit" name="done" value="SignUp" onclick="submit_actions()" class="button button2">Sign Up</button>
+                    <button  style= " width: 100%; margin: 2em 0 0; " type="submit" name="done" value="SignUp" onclick="submit_actions()"  class="button button2">Sign Up</button>
 
             
 <!--        <input type="submit" name="done" value="SignUp" onclick="submit_actions()"/>-->

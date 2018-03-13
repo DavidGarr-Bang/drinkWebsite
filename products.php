@@ -3,10 +3,14 @@
           <html>
 
                 <head>
-                         <title>BeveragesDB</title>
+                         <title>Beverages Shop</title>
                          <meta charset="utf-8">
                          <!--  link to favicon-->
+                    
                          <link rel="shortcut icon" href="img/favicon.ico">
+                    
+                     <link rel="stylesheet" href="css/shopping-cart_icon-css.css" type="text/css">
+                    
                          <link rel="stylesheet" href="css/normalize.css">
                          <!-- link to style sheet -->
                          <link rel="stylesheet" href="css/nonfloatTest4.css" type="text/css">
@@ -47,9 +51,18 @@
                           <li><a  href="#.html">Sale</a></li>
                           <li><a  href="loginazuser.php">Login</a></li>
                             <li><a  href="index.php">Shop</a></li>
-                         <li><a  href="./index.php?view_cart=1">Cart</a></li>    
-                          <li><a  href="loginazuser.php">log out</a></li>
+                              
+                                <li><a  href="loginazuser.php">log out</a></li>
 
+                         <li>
+                             <a  href="./index.php?view_cart=1">  <div class="icon-cart" style="float: left">
+    <div class="cart-line-1" style="background-color: #E5E9EA"></div>
+    <div class="cart-line-2" style="background-color: #E5E9EA"></div>
+    <div class="cart-line-3" style="background-color: #E5E9EA"></div>
+    <div class="cart-wheel" style="background-color: #E5E9EA"></div>
+  </div>
+                             </a></li>    
+                        
                               
                               
                           </ul>

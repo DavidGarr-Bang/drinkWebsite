@@ -1,0 +1,158 @@
+body {
+  background-color: #292929;
+}
+
+
+
+
+.button {
+  text-decoration: none;
+  border: 3px solid #e3e3e3;
+  padding: 6px 10px;
+  color: #e3e3e3;
+  font-family: Arial;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+    
+    
+   
+}
+
+.button:hover {
+  background-color: #e3e3e3;
+  color: #3e3e3e;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.huzzah {
+  margin: 90px auto;
+  padding: 25px 28px;
+  background: #e3e3e3;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.huzzah .close {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.huzzah h2 {
+  font-family: Arial;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.huzzah p {
+  font-family: Arial;
+  font-size: 14px;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+/************************/
+/************************/
+
+.h-link {margin-top:40px;
+}
+
+.h-link .button {
+  text-decoration: none;
+  border: 3px solid #8A1C27;
+  padding: 7px 14px;
+  color: #e3e3e3;
+  font-family: Arial;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.h-link .button:hover {
+  background-color: #8A1C27;
+  color: #e3e3e3;
+  border: 3px solid #e3e3e3;
+}
+
+.h-link .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.h-link .overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.honor-links {
+  margin: 90px auto;
+  padding: 25px 28px;
+  background: #e3e3e3;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.h-link .close {
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+.honor-links h2 {
+  font-family: Arial;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.honor-links p {
+  font-family: Arial;
+  font-size: 14px;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+
+
+
+.implinks {width:490px;font-family:Montserrat;color:#fff;background:#111;margin: 90px auto;position: relative;transition: all 5s ease-in-out;}
+
+.imptitle {padding:8px;background:#444;text-align:center;font-size:20px;text-transform:uppercase;border-bottom:#8A1C27 5px solid;}
+
+.quicklink{text-align:center;height:120px;padding:13px 0 0;}
+
+.quicklink a{display:inline-block;background:#8A1C27;color:#fff;margin-bottom:4px;width:110px;font:10px/20px courier new;text-transform:uppercase;transition:.3s;text-decoration:none;}
+
+.quicklink a:hover{color:#8A1C27;background:#fff;}
+
+.quickactive a{display:inline-block;background:#8A1C27;color:#fff;margin-bottom:4px;width:225px;font:10px/20px courier new;text-transform:uppercase;transition:.3s;text-decoration:none;}
+
+.quickactive a:hover{color:#8A1C27;background:#fff;}

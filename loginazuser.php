@@ -14,7 +14,7 @@
       {  
            if(empty($_POST["email"]) || empty($_POST["Password"]))  
            {  
-                $message = '<label>All fields are required</label>';  
+                $message = '<label>Please fill all fields</label>';  
            }  
            else  
            {  
@@ -35,7 +35,7 @@
                 }  
                 else  
                 {  
-                     $message = '<label>incorrect details</label>';  //output if the details do not match
+                     $message = '<label>Email or Password is wrong</label>';  //output if the details do not match
                 }  
            }  
       }  
@@ -48,7 +48,7 @@
  <!DOCTYPE html>  
  <html>  
        <head>         
-                            <title>BeveragesDB</title>
+                            <title>Beverages Log in</title>
                             <meta charset="utf-8">
                             <!--  link to favicon -->
                             <link rel="shortcut icon" href="img/favicon.ico">
@@ -133,12 +133,6 @@ body, html {
 
                 
            
-                <?php  
-                if(isset($message))  
-                {  
-                     echo '<label class="text-danger">'.$message.'</label>'; //error messages
-                }  
-                ?>  
                  
                 <!--<form method="post">  
                      <label>email</label>  
@@ -152,8 +146,13 @@ body, html {
          
         
          
-          
-          <div class="bucket">
+         
+    
+               
+                  
+                  
+              <div class="bucket">
+              
    <div class="buffer">
      <div class="header">
        <h1 class="title">Sign in</h1>
@@ -169,8 +168,17 @@ body, html {
           
 <!--        <input type="submit" name="login" value="Login"/> -->
           
+           
+          
         <button  style= " width: 100%; margin: 2em 0 0; " type="submit" name="login" value="Login" class="button button2">Sign in</button>
-
+<?php  
+                if(isset($message))  
+                {   
+       
+                     echo ' <h1 class="title">'.$message.'</h1>'; //error messages
+                    
+                }  
+                ?>
 
        </form>
        
