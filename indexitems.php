@@ -7,7 +7,7 @@
                               <link rel="shortcut icon" href="img/favicon.ico">
                               <!-- link to style sheets --> 
                             <link rel="stylesheet" href="css/normalize.css">
-                            <link rel="stylesheet" href="css/nonfloat.css" type="text/css">
+                            <link rel="stylesheet" href="css/style.css" type="text/css">
                             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                             <!-- link to style sheet for nav show-->
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,11 +16,8 @@
                  </head>
 
 
-
+<body>
   <!-- navigation links to pages in my website -->
-      <header id="topnav">
-          <div class="inner">
-              <div class="logo" ><a href="home.html">Beverages</a></div>
 
                   <nav>
                           <label for="show-nav" class="show-nav"><i class="fa fa-align-justify" style="font-size:36px;"></i> </label>
@@ -28,7 +25,7 @@
                           <ul id="nav">
                  
                           <!-- link to html pages -->
-                          <li><a  href="home.html">Home</a></li>
+                          <li><a  href="#">Home</a></li>
                           <li class="dropdown">
                           <a href="#" class="dropbtn">Cocktails</a>
                           <div class="dropdown-content">
@@ -45,14 +42,12 @@
                           </div>
                           </li>
                           <li><a  href="#.html">Sale</a></li>
+                           <li><a  href="signup.php">Sign Up</a></li>
                           <li><a  href="loginazuser.php">Login</a></li>
-                        
+                          <li><a  href="loginazadmin.php">Admin</a></li>
                           </ul>
                  </nav>
-               </div>
-                
-</header>
-<body>
+
              
 
   <!--________________ end of navigation___________________________ -->
@@ -93,7 +88,7 @@ if(isset($_GET['deleteid'])){
 <!-- table displaying details from a table in the database    -->
 <table>
     <tr class="tbl">
-        <td>itemID</td><td>categoryID</td><td>itemCode</td><td>itemName</td><td>itemDesc</td><td>price</td><td>StockNumber</td><td>Edit</td><td>Delete</td>
+        <td>itemID</td><td>categoryID</td><td>itemCode</td><td>itemName</td><td>itemDesc</td><td>price</td><td>StockNumber</td><td>Purchases</td><td>Edit</td><td>Delete</td>
     </tr>
 
     <?php
@@ -108,7 +103,10 @@ if(isset($_GET['deleteid'])){
         <td><?php echo $user['itemName']; ?></td>
         <td><?php echo $user['itemDesc']; ?></td>
         <td><?php echo $user['price']; ?></td>
-         <td><?php echo $user['StockNumber']; ?></td>
+        <td><?php echo $user['StockNumber']; ?></td>
+        <td><?php echo $user['Purchases']; ?></td>
+
+
 
          <!-- options to edit and delete records in the table   -->
         <td class="edit"><a href="edititems.php?id=<?php echo $user['itemID']; ?>">Edit</a></td>

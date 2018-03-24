@@ -13,7 +13,7 @@
                     
                          <link rel="stylesheet" href="css/normalize.css">
                          <!-- link to style sheet -->
-                         <link rel="stylesheet" href="css/nonfloatTest4.css" type="text/css">
+                         <link rel="stylesheet" href="css/nonfloatTest7.css" type="text/css">
                          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                          <!-- link to style sheet for nav show-->
                          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,8 +37,8 @@
                           <li class="dropdown">
                           <a href="#" class="dropbtn">Cocktails</a>
                           <div class="dropdown-content">
-                              <a href="#">drink 1</a>
-                              <a href="#">drink 2</a>
+                             <a href="TequilaSunrise.html">Tequila Sunrise</a>
+                              <a href="PlantersPunch.html">Planters Punch</a>
                          </div>
                           </li>
                           <li class="dropdown">
@@ -51,6 +51,20 @@
                           <li><a  href="#.html">Sale</a></li>
                           <li><a  href="loginazuser.php">Login</a></li>
                             <li><a  href="index.php">Shop</a></li>
+                              <?php  
+ //login_success.php  
+ session_start();  
+ if(isset($_SESSION["email"]))  
+ {  
+      echo '<li><a  href="login_usersuccess.php"> '.$_SESSION["email"].'</li>';  //displays the email address of the user logged in 
+     
+ }  
+ 
+ ?>  
+                              
+                              
+                              
+                              
                               
                                 <li><a  href="loginazuser.php">log out</a></li>
 
@@ -79,19 +93,7 @@
 
             <!--  php code to display user email after they have logged in -->
 
-  <?php  
- //login_success.php  
- session_start();  
- if(isset($_SESSION["email"]))  
- {  
-      echo '<h3>Welcome - '.$_SESSION["email"].'</h3>';  //displays the email address of the user logged in 
-     
- }  
- else  
- {  
-      header("location:loginazuser.php"); //link to logout page 
-}
- ?>  
+  
             
 
  </body>
@@ -110,83 +112,83 @@ Stores info for products
 // Define product information
 $products = array(
 	1 => array(
+        'itemID'=> 1,
 		'name' => 'Jack Daniel',
-		'price' => 10.99,
+		'price' => 28.99,
 		'category' => 'whiskey',
-		'description' => 'A delicious fruit juice drink thats perfect for the weekend!',
-        'dinkIcon' => '<img src="https://www.thedailymeal.com/sites/default/files/styles/original/public/story/2016/Jack%20Daniel%27s.jpg?itok=Fv8MPMei" height="260" width="260">'
+		'description' => 'Jack Daniels is a brand of Tennessee whiskey and the top selling American whiskey in the world',
+        'dinkIcon' => '<img src="https://i.pinimg.com/736x/c9/a3/68/c9a3683981c92f35dcdf7fccfcb33e2b--jack-daniels-whisky.jpg" height="480" width="480">'
 
 	),
 	2 => array(
-		'name' => 'Jim bean',
-		'price' => 12.99,
+		'name' => 'Jim Bean',
+		'price' => 24.99,
 		'category' => 'whiskey',
-		'description' => 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem.',
-        'dinkIcon' => '<img src="images/jim_beam.jpg" height="260" width="260">'
+		'description' => 'Jim Beam is a brand of bourbon whiskey produced in Clermont, Kentucky',
+        'dinkIcon' => '<img src="images/jim_beam.jpg" height="480" width="480">'
 
        
 	),
 	3 => array(
-		'name' => 'jameson',
+		'name' => 'Jameson',
 		'price' => 11.99,
 		'category' => 'whiskey',
-		'description' => 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
-        'dinkIcon' => '<img src="https://img.idlassets.com/prod/Product/153/promo/1/promo_384x384.jpg" height="260" width="260">'
+		'description' => 'Jameson is a blended Irish whiskey produced by the Irish Distillers subsidiary of Pernod Ricard.',
+        'dinkIcon' => '<img src="https://img.idlassets.com/prod/Product/153/promo/1/promo_384x384.jpg" height="480" width="480">'
 
 	),
     4 => array(
-		'name' => 'Jamesoni',
+		'name' => 'JagerMeister',
 		'price' => 10.99,
 		'category' => 'Cocktail',
-		'description' => 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum ',
-        'dinkIcon' => '<img src="https://realfood.tesco.com/media/images/164-FrozenStrawberryDaiquiris-LH-d53ca5a4-f31b-471c-8777-452fa090bbba-0-1400x919.jpg" height="260" width="260">'
+		'description' => 'Jägermeister is a digestif made with 56 herbs and spices',
+        'dinkIcon' => '<img src="images/jagermeister.jpg" height="480" width="480">'
 
 	),
     
     5 => array(
-		'name' => 'Tequila Sunrise',
-		'price' => 10.99,
+		'name' => 'Skyy Vodka',
+		'price' => 19.99,
 		'category' => 'Cocktail',
-		'description' => 'A delicious fruit juice drink thats perfect for the weekend!',
-        'dinkIcon' => '<img src="https://barprive.com/api/images/cocktails/512/tequila-sunrise.jpg" height="260" width="260">'
+		'description' => 'SKYY vodka is produced by the Campari America division of Campari Group of Milan, Italy',
+        'dinkIcon' => '<img src="images/skyyvodka.jpg" height="480" width="480">'
 
 	),
 	6 => array(
-		'name' => 'Planters Punch',
-		'price' => 12.99,
-		'category' => 'Punch',
-		'description' => 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem.',
-        'dinkIcon' => '<img src=" https://barprive.com/api/images/cocktails/512/planters-punch.jpg" height="260" width="260">'
+		'name' => 'Belvedere',
+		'price' => 30.85,
+		'category' => 'Cognac',
+		'description' => 'Belvedere Vodka is a brand of Polish rye vodka produced and distributed by LVMH.',
+        'dinkIcon' => '<img src=" images/Belvedere.jpg" height="480" width="480">'
 
        
 	),
 	7 => array(
-		'name' => 'Frozen Margarita',
-		'price' => 11.99,
-		'category' => 'Margarita',
-		'description' => 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
-        'dinkIcon' => '<img src="https://cdn.liquor.com/wp-content/uploads/2017/07/05150949/Frozen-Margarita-720x720-recipe.jpg"  height="260" width="260" >'
+		'name' => 'Chivas Regal',
+		'price' => 35.99,
+		'category' => 'whiskey',
+		'description' => 'Chivas Regal is a blended Scotch whisky produced by Chivas Brothers, which is part of Pernod Ricard',
+        'dinkIcon' => '<img src="images/chivasregal.jpg"  height="480" width="480" >'
 
 	),
     8 => array(
-		'name' => 'Strawberry Daiquiri',
-		'price' => 10.99,
-		'category' => 'Cocktail',
-		'description' => 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum ',
-        'dinkIcon' => '<img src="images/jim_beam.jpg" height="260" width="260">'
+		'name' => 'Bombay Sapphire',
+		'price' => 21.99,
+		'category' => 'gin',
+		'description' => 'Bombay Sapphire is a brand of gin that was first launched in 1987 by IDV. In 1997 Diageo sold the brand to Bacardi',
+        'dinkIcon' => '<img src="images/bombay.jpg" height="480" width="480">'
+
+	),
+     9 => array(
+		'name' => 'Fireball Whiskey',
+		'price' => 14.99,
+		'category' => 'whiskey',
+		'description' => 'Fireball Cinnamon Whisky is a mixture of whisky, cinnamon flavoring and sweeteners that is produced by the Sazerac Company',
+        'dinkIcon' => '<img src="images/fireball.jpg" height="480" width="480">'
 
 	)
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     
 );
 

@@ -92,17 +92,18 @@ if (isset($_POST['submit'])) {
 
 
     
-       $itemID = $_POST['itemID'];
+           $itemID = $_POST['itemID'];
        $categoryID = $_POST['categoryID'];
-       $itemCode = $_POST['itemCode'];
-       $itemName = $_POST['itemName'];
-       $itemDesc = $_POST['itemDesc'];
-       $price = $_POST['price'];
-        $StockNumber = $_POST['StockNumber'];
+         $itemCode = $_POST['itemCode'];
+         $itemName = $_POST['itemName'];
+         $itemDesc = $_POST['itemDesc'];
+            $price = $_POST['price'];
+      $StockNumber = $_POST['StockNumber'];
+        $Purchases = $_POST['Purchases'];
      
       //updating details for a particular id
 
-    $query = "UPDATE `item` SET `itemID`='" . $itemID . "',categoryID='" . $categoryID . "',itemCode='" . $itemCode. "',itemName='" . $itemName. "',itemDesc='" . $itemDesc. "',price='" . $price."', StockNumber='" . $StockNumber . "' WHERE itemID=".$id;
+    $query = "UPDATE `item` SET `itemID`='" . $itemID . "',categoryID='" . $categoryID . "',itemCode='" . $itemCode. "',itemName='" . $itemName. "',itemDesc='" . $itemDesc. "',price='" . $price."', StockNumber='" . $StockNumber . "' , Purchases='" . $Purchases . "' WHERE itemID=".$id;
 
     $update = updateitem($query); //update item table
 
@@ -130,9 +131,13 @@ if (isset($_POST['submit'])) {
     <input type="text" name="itemDesc" value="<?php echo $user[0]['itemDesc']; ?>"> <br>
     <br><br> Price
     <input type="text" name="price" value="<?php echo $user[0]['price']; ?>"> <br>
-    <br><br> StockNumber
+    <br><br> Stock Number
     <input type="text" name="StockNumber" value="<?php echo $user[0]['StockNumber']; ?>"> <br>
     <br><br>
+     <br><br> Purchases
+    <input type="text" name="Purchases" value="<?php echo $user[0]['Purchases']; ?>"> <br>
+    <br><br>
+
     <input type="submit" name="submit" value="Edit">
    
 </form>

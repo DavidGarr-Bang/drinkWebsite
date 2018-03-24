@@ -2,7 +2,7 @@
 //connect to database 
 //contains user and password for database access
 function getCon(){
-    $con=new PDO("mysql:host=localhost:8889;dbname=BeveragesDB", "dbuser", "password");
+    $con=new PDO("mysql:host=localhost:8889;dbname=BeveragesDB", "root", "root");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $con;
 }

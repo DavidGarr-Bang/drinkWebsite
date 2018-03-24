@@ -72,7 +72,7 @@ li.dropdown {
     display: none;
     position: absolute;
     background: rgba(0,0,0,0.7);
-    border-style: solid;
+    border-style: solid black;
     border-radius: 0px;
   
     min-width: 190px;
@@ -146,7 +146,7 @@ li.dropdown {
   /*Display 'show nav' link*/
   .show-nav {
     display:block;
-      float: left
+      float: left;
   }
   /* hiding the logo when the navigation is collapsed*/
   .logo{

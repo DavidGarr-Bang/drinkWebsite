@@ -12,6 +12,9 @@ Purpose:	View products
 require("products.php");
 require("layout.php");
 
+include './includeitems/configitems.php';//link to connection page to connect to database
+
+
 // Initialize cart
 if(!isset($_SESSION['shopping_cart'])) {
 	$_SESSION['shopping_cart'] = array();
@@ -87,7 +90,7 @@ if(isset($_GET['view_product'])) {
       <p class='price'>£". $products[$product_id]['price'] ."</p>
        <br>
       <p class='description'>". $products[$product_id]['description'] ."</p>
-       Quantity:
+   
       <form action='./index.php?view_product=$product_id' method='post'>
       <select class='quantity'name='quantity' >
         <option value='1'>1</option>
@@ -98,7 +101,8 @@ if(isset($_GET['view_product'])) {
         <option value='6'>6</option>
         </select>
           <input type='hidden' name='product_id' value='$product_id' />
-      <button style=' margin: 2em 0 0; margin-bottom: 20px;' type='submit' name='add_to_cart'value='Add to cart' class='button button2'>ADD TO CART</button>
+         
+      <button style=' margin: 2em 0 0; margin-bottom: 20px; ' type='submit' name='add_to_cart'value='Add to cart' class='button button2'>ADD TO CART</button>
       </form>
     </div>
   </div>
@@ -189,6 +193,7 @@ else if(isset($_GET['checkout'])) {
 					<th style='border-bottom:1px solid #000000;'>Item Price</th>
 					<th style='border-bottom:1px solid #000000;'>Quantity</th>
 					<th style='border-bottom:1px solid #000000;'>Cost</th>
+                    <th style='border-bottom:1px solid #000000;'>Cost</th>
 				</tr>";
 				
 				$total_price = 0;
@@ -202,10 +207,26 @@ else if(isset($_GET['checkout'])) {
 						<td style='border-bottom:1px solid #000000;'>£" . $products[$product_id]['price'] . "</td> 
 						<td style='border-bottom:1px solid #000000;'>" . $product['quantity'] . "</td>
 						<td style='border-bottom:1px solid #000000;'>£" . ($products[$product_id]['price'] * $product['quantity']) . "</td>
+						<td style='border-bottom:1px solid #000000;'>£" . $products[$product_id]['itemID'] . "</td>
+
 					</tr>";
+                    
+                    
+                    $query = "SELECT name itemeName FROM item where = '1' ";
+                    
+                    $data = mysqli_query($query);//calls function in the connection page above
+
 				}
+        
 			echo "</table>
-			<p>Total price: $" . $total_price . "</p>";
+			<p  style=' color: #fff;'> Total price: $" . $total_price . "</p>";
+        
+        
+//         if(!empty($data)):
+//         foreach ($data as $user):
+        
+          echo "
+			<p  style=' color: #fff':>" .  $data . "</p>";
 		
 	}
 }

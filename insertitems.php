@@ -1,8 +1,8 @@
 <?php
 //connect to database 
-$host = "localhost:8889";
-$username ="root";
-$password ="root";
+$host = "localhost";
+$username ="dbuser";
+$password ="password";
 $database = "BeveragesDB";
 
 try
@@ -22,10 +22,11 @@ try
     $itemDesc = $_POST['itemDesc'];
     $price = $_POST['price'];
     $StockNumber = $_POST['StockNumber'];
+    $Purchases = $_POST['Purchases'];
     
    //inserting details into a table in the database
 
-    $insert = $connect->prepare("INSERT INTO `item`(`itemID`, `categoryID`, `itemCode`, `itemName`, `itemDesc`, `price`, `StockNumber`) VALUES (:itemID,:categoryID,:itemCode,:itemName,:itemDesc,:price,:StockNumber)");
+    $insert = $connect->prepare("INSERT INTO `item`(`itemID`, `categoryID`, `itemCode`, `itemName`, `itemDesc`, `price`, `StockNumber`, `Purchases`) VALUES (:itemID,:categoryID,:itemCode,:itemName,:itemDesc,:price,:StockNumber,:Purchases)");
 
     $insert->bindParam(':itemID',$itemID);
     $insert->bindParam(':categoryID',$categoryID);
@@ -34,7 +35,7 @@ try
     $insert->bindParam(':itemDesc',$itemDesc);
     $insert->bindParam(':price',$price);
     $insert->bindParam(':StockNumber',$StockNumber);
-   
+    $insert->bindParam(':Purchases',$Purchases);
 
     $insert->execute();
 }
@@ -74,7 +75,7 @@ catch(PDOException $error)
                           <ul id="nav">
                  
                           <!-- link to html pages -->
-                          <li><a  href="home.html">Home</a></li>
+                          <li><a  href="#">Home</a></li>
                           <li class="dropdown">
                           <a href="#" class="dropbtn">Cocktails</a>
                           <div class="dropdown-content">
@@ -110,29 +111,40 @@ catch(PDOException $error)
 
 <!-- form to allow users to insert details  -->
 <form method="post">
-     <br><br>Item ID
-
-    <input type="text" name="itemID" placeholder="itemID">
-     <br> <br>Category ID 
-
-    <input type="text" name="categoryID" placeholder="categoryID">
-     <br><br>Item Code
-
-    <input type="text" name="itemCode" placeholder="itemCode">
-     <br><br>Item Name 
-
-    <input type="text" name="itemName" placeholder="itemName">
-     <br><br>Item Description
-
-    <input type="text" name="itemDesc" placeholder="itemDesc">
-     <br><br>Price
-
-    <input type="text" name="price" placeholder="price">
-     <br><br>StockNumber
-
-      <input type="text" name="StockNumber" placeholder="StockNumber">
      <br><br>
 
+     Item ID
+     <input type="text" name="itemID" placeholder="itemID">
+     <br> <br>
+
+     Category ID 
+     <input type="text" name="categoryID" placeholder="categoryID">
+     <br><br>
+
+     Item Code 
+     <input type="text" name="itemCode" placeholder="itemCode">
+     <br><br>
+
+     Item Name 
+     <input type="text" name="itemName" placeholder="itemName">
+     <br><br>
+
+     Item Description <input type="text" name="itemDesc" placeholder="itemDesc">
+     <br><br>
+
+     Price
+     <input type="text" name="price" placeholder="price">
+     <br><br>
+
+
+     StockNumber
+     <input type="text" name="StockNumber" placeholder="StockNumber">
+     <br><br>
+
+
+     Purchases
+     <input type="text" name="Purchases" placeholder="Purchases">
+     <br><br>
 
     <input type="submit" name="done" value="insert">
 
