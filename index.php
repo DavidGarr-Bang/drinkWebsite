@@ -1,7 +1,12 @@
 
 
 <?php
+
+
 session_start();
+
+include './includeitems/configitems.php';//link to connection page to connect to database
+
 
 /*
 File:		index.php
@@ -9,10 +14,10 @@ Author:		Levi Meahan
 Purpose:	View products
 */
 
+
 require("products.php");
 require("layout.php");
 
-include './includeitems/configitems.php';//link to connection page to connect to database
 
 
 // Initialize cart
@@ -133,10 +138,8 @@ if(isset($_GET['view_product'])) {
 // View cart
 else if(isset($_GET['view_cart'])) {
 	// Display site links
-	echo "<p>
-		<a href='./index.php'>DropShop</a></p>";
 	
-	echo "<h3>Your Cart</h3>
+	echo "
 	<p>
 		<a href='./index.php?empty_cart=1'>Empty Cart</a>
 	</p>";
@@ -146,31 +149,59 @@ else if(isset($_GET['view_cart'])) {
 	}
 	else {
 		echo "<form action='./index.php?view_cart=1' method='post'>
-		<table style='width:500px;' cellspacing='0'>
-				<tr>
-					<th style='border-bottom:1px solid #000000;'>Name</th>
-					<th style='border-bottom:1px solid #000000;'>Price</th>
-					<th style='border-bottom:1px solid #000000;'>Category</th>
-					<th style='border-bottom:1px solid #000000;'>Quantity</th>
-				</tr>";
+		 <div id='w'>
+    <div id='page'>
+      <table id='cart'>
+        <thead>
+          <tr>
+            <th class='first'>Photo</th>
+            <th class='second'>Qty</th>
+            <th class='third'>Product</th>
+            <th class='fourth'>Category</th>
+            <th class='second'>Price</th>
+          
+          
+          
+          </tr>
+        </thead>";
 				foreach($_SESSION['shopping_cart'] as $id => $product) {
 					$product_id = $product['product_id'];
 					
-					echo "<tr>
-						<td style='border-bottom:1px solid #000000;'><a href='./index.php?view_product=$id'>" . 
-							$products[$product_id]['name'] . "</a></td>
-						<td style='border-bottom:1px solid #000000;'>£" . $products[$product_id]['price'] . "</td> 
-						<td style='border-bottom:1px solid #000000;'>" . $products[$product_id]['category'] . "</td>
-						<td style='border-bottom:1px solid #000000;'>
-							<input type='text' name='quantity[$product_id]' value='" . $product['quantity'] . "' /></td>
-					</tr>";
+					echo "
+                
+                
+                 <tr class='productitm'>
+            <td><img src='https://i.imgur.com/8goC6r6.png' class='thumb'></td>
+            <td><input type='number' value=". $product['quantity'] ." min='0' max='99' class='qtyinput'></td>
+            <td><a href='./index.php?view_product=$id' style=' color: #1aa6c9;'>" . $products[$product_id]['name'] . "</a></td>
+            <td>" . $products[$product_id]['category'] ."</td>
+            <td>" . $products[$product_id]['price'] ."</td>
+            
+          </tr>
+                
+                        
+                   
+							
+					";
 				}
-			echo "</table>
-			<input type='submit' name='update_cart' value='Update' />
-			</form>
-			<p>
-				<a href='./index.php?checkout=1'>Checkout</a>
-			</p>";
+			echo " 
+          <tr class'checkoutrow'>
+            <td colspan='6' class='checkout'>
+       
+<button style=' margin: 2em 0 0; margin-bottom: 20px;  background-color: #000; color:#fff;'  onclick='location.href='http://www.hyperlinkcode.com/button-links.php'' class='button button2'>Checkout</button>
+</a>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  <p>
+			
+			</p>
+";
 		
 	}
 }
@@ -212,21 +243,25 @@ else if(isset($_GET['checkout'])) {
 					</tr>";
                     
                     
-                    $query = "SELECT name itemeName FROM item where = '1' ";
-                    
-                    $data = mysqli_query($query);//calls function in the connection page above
+                }
+                        //    $query="SELECT * FROM item WHERE itemId = 1 ";
 
-				}
+
+         
+                    $query = "SELECT itemName FROM item WHERE itemId = 1 ";
+                    
+                    $data = selectitem($query);//calls function in the connection page above
+        
+        
         
 			echo "</table>
-			<p  style=' color: #fff;'> Total price: $" . $total_price . "</p>";
+			<p  style=' color: #fff;'> Total price: £" . $total_price . "</p>";
         
         
 //         if(!empty($data)):
 //         foreach ($data as $user):
         
-          echo "
-			<p  style=' color: #fff':>" .  $data . "</p>";
+          echo " <p  style=' color: #fff':>" .  $data . "</p>";
 		
 	}
 }

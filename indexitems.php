@@ -41,11 +41,11 @@
                               <a href="#">item 2</a>
                           </div>
                           </li>
-                          <li><a  href="#.html">Sale</a></li>
-                           <li><a  href="signup.php">Sign Up</a></li>
-                          <li><a  href="loginazuser.php">Login</a></li>
-                          <li><a  href="loginazadmin.php">Admin</a></li>
-                          </ul>
+                        <li><a  href="#.html">Sale</a></li>
+                        <li><a  href="signup.php">Sign Up</a></li>
+                        <li><a  href="loginazuser.php">Login</a></li>
+                        <li><a  href="loginazadmin.php">Admin</a></li>
+                        </ul>
                  </nav>
 
              
@@ -65,6 +65,9 @@
 include './includeitems/configitems.php';//link to connection page to connect to database
 
 $query = "SELECT * FROM item";
+
+
+
 $data = selectitem($query);//calls function in the connection page above
 
 if(isset($_GET['deleteid'])){

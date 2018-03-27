@@ -1,185 +1,185 @@
-  <!DOCTYPE html>  
- <html>  
-       <head>         
-                            <title>Beverages Home</title>
-                            <meta charset="utf-8">
-                            <!--  link to favicon -->
-                            <link rel="shortcut icon" href="img/favicon.ico">
-                            <!-- link to style sheets --> 
-                            <link rel="stylesheet" href="css/normalize.css">
-                            <link rel="stylesheet" href="css/mainNew.css">
-                            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-                            <!-- link to style sheet for nav show-->
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <!-- link to javascript doc.-->
-                            
-           
-           
-           
-           
-           
-                 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+<!DOCTYPE html>
+<html>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+<head>
+    <title>Beverages Home</title>
+    <meta charset="utf-8">
+    <!--  link to favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- link to style sheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- link to style sheet for nav show-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- link to javascript doc.-->
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-            
-            
- function myFunction() {
-    var x = document.getElementById("topNav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-</script>
-           
-                 </head>
 
-     <header style="padding-top: 40px;" id="topnav">
-          <div class="inner">
-          <div class="logo" ><a href="home.html">Beverages</a></div>
 
-                      <!-- navigation links to pages in my website -->
-              <nav role='navigation'>
-       
-                          <label for="show-nav" class="show-nav"><i class="fa fa-align-justify" style="font-size:36px;"></i> </label>
-                          <input type="checkbox" id="show-nav" role="button" class="navcheck">
-                          <ul id="nav">
-                 
-                          <!-- link to html pages -->
-                          <li class="active" ><a  href="home.html">Home</a></li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Cocktails</a>
-                          <div class="dropdown-content">
-                             <a href="TequilaSunrise.html">Tequila Sunrise</a>
-                              <a href="PlantersPunch.html">Planters Punch</a>
-                         </div>
-                          </li>
-                         
-                          <li  class="dropdown">
-                          <a href="#" class="dropbtn">Drinks</a>
-                          <div class="dropdown-content">
-                              <a href="#">item 1</a>
-                              <a href="#">item 2</a>
-                          </div>
-                          </li>
-                          <li><a  href="#.html">Sale</a></li>
-                          <li><a  href="loginazuser.php">Login</a></li>
-                            <li><a  href="index.php">Shop</a></li>
-                              
-<!--                              <li><a href= login_usersuccess.php>kdkdjf</a></li>-->
-                          </ul>
-                 </nav>
-               </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 49) {
+                $('body').addClass('header-fixed');
+            } else {
+                $('body').removeClass('header-fixed');
+            }
+            // change the style of the navbar when the user scrolls into the next zone.
+            // get the distance of the 2nd section from the top of the page - height of header.
+            var topOffset = $('#demosection2').offset().top;
+            var headerHeight = $('#topnav').height();
+            var transitionPoint = topOffset - headerHeight;
+            if (scrollTop > transitionPoint) {
+                $('#topnav').addClass('alt-header');
+            } else {
+                $('#topnav').removeClass('alt-header');
+            }
+          });
+        });
+    </script>
+
+</head>
+
+<header  id="topnav">
+    <div class="inner">
+        <div class="logo"><a href="home.html" style="  text-decoration:none;">Beverages</a></div>
+
+        <!-- navigation links to pages in my website -->
+        <nav role='navigation'>
+
+            <label for="show-nav" class="show-nav"><i class="fa fa-align-justify" style="font-size:36px;"></i> </label>
+            <input type="checkbox" id="show-nav" role="button" class="navcheck">
+            <ul  id="nav">
+
+                <!-- link to html pages -->
+                <li><a href="loginazuser.php">Login</a></li>
                 
-</header>
-     
-      <body>  
 
-  <!--________________ end of navigation___________________________ -->
-
-
-                        <!--  title of my page (heading text) -->    
-           
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Drinks</a>
+                    <div class="dropdown-content">
+                        <a href="#">item 1</a>
+                        <a href="#">item 2</a>
+                    </div>
+                </li>
+                <li><a href="#.html">Sale</a></li>
                
-<div id="slider">
-<figure>
-<img src="images/alcohol-bar-party-cocktail.jpg"  alt>
-<img src="images/pexels-photo-225236.jpeg"   alt>
-<img src="images/pexels-photo-452737.jpeg"  alt>
-<img src="images/pexels-photo-109275.jpeg"  alt>
-<img src="images/pexels-photo-452742.jpeg"  alt>
-</figure>
-</div>
-   
-          
-          
-          
-           <div class="test2">
-          
-<section>
-  <div class="inner">
-      
-    <h1>What we do?</h1>
-    <p><span>Vodka, Whiskey, Gin, Cocktails and recipes what we serve. What is included in this website is a shop with a selection of drinks which you can order for affordable prices, and a tab with prestine cocktail recipes, with the ability to recreate at home for you leisure. You can order anything from one bottle or a whole party from us, send an amazing gift or stock up on Whiskey or Vodka for the summer or winter. You won’t see thousands of Liquors on our website however every bottle comes personally recommended by us.</span></p>
-  </div>
-</section>
-      </div>    
-          <div class="section blue pattern">
-              
-          
-              
-                   
-               <br>
-      <br>
-      <br>
-        <br>
-      <br>
-      <br>
-        <br>
-      <br>
-      <br>
-               <br>
-      <br>
-      <br>
-        <br>
-      <br>
-    
-              
-</div>
-          
-     
-          
-          
-          <div class="test">
-  <div class="inner">
-      
-    <h1>About us</h1>
-    <p><span>The Beverages was founded in February 2014, when it first started providing cocktails and information now it sells drinks as well as providing information such as recipes. Our simplicity of information and the design makes our website very easy to navigate these wide choices. Our homepage offers you a user-friendly and an up-to-date approach that will lead you to the product range. Our non-stop shopping will allow you to purchase drinks! We have added recipes of our drinks as well as videos (How to videos) We have produce our website as a team for our module called Team Project. In our team we have myself, David, Melba, John, Amit and Rahul.</span></p>
-  </div>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Cocktails</a>
+                    <div class="dropdown-content">
+                        <a href="TequilaSunrise.html">Tequila Sunrise</a>
+                        <a href="PlantersPunch.html">Planters Punch</a>
+                    </div>
+                </li>
+                <li><a href="index.php">Shop</a></li>
+                
+                 <li class="active"><a href="home.html">Home</a></li>
 
-      </div>
-          
-          
-          
-          
-      <div class="test2">
-          
-<section>
-  <div class="inner">
-      
-    <h1>Dont Miss Out!!</h1>
-      <br>
-      <img src="https://i.pinimg.com/736x/c9/a3/68/c9a3683981c92f35dcdf7fccfcb33e2b--jack-daniels-whisky.jpg" height="480" width="480" >'
-  
-    <p><span>Order pret</span></p>
-  </div>
-</section>
-      </div>  
-        
-          
-          
-          
-          
-          
-          
-          
-          
-          
-      </body>  
- </html>  
+                <!--                              <li><a href= login_usersuccess.php>kdkdjf</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+</header>
+
+<body>
+
+    <!--________________ end of navigation___________________________ -->
+
+
+    <!--  title of my page (heading text) -->
+
+
+    <div id="slider">
+        <figure>
+            <img src="images/alcohol-bar-party-cocktail.jpg" alt>
+            <img src="images/pexels-photo-225236.jpeg" alt>
+            <img src="images/pexels-photo-452737.jpeg" alt>
+            <img src="images/pexels-photo-109275.jpeg" alt>
+            <img src="images/pexels-photo-452742.jpeg" alt>
+        </figure>
+    </div>
+
+
+
+
+    <div class="test2">
+
+        <section>
+            <div class="inner">
+
+                <h1>What we do?</h1>
+                <p><span>Vodka, Whiskey, Gin, Cocktails and recipes what we serve. What is included in this website is a shop with a selection of drinks which you can order for affordable prices, and a tab with prestine cocktail recipes, with the ability to recreate at home for you leisure. You can order anything from one bottle or a whole party from us, send an amazing gift or stock up on Whiskey or Vodka for the summer or winter. You won’t see thousands of Liquors on our website however every bottle comes personally recommended by us.</span></p>
+            </div>
+        </section>
+    </div>
+    
+    
+<!--  slide show picture-->
+    <div class="section blue pattern">
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+
+
+
+
+    <div class="test">
+        <div class="inner">
+
+            <h1>About us</h1>
+            <p><span>The Beverages was founded in February 2014, when it first started providing cocktails and information now it sells drinks as well as providing information such as recipes. Our simplicity of information and the design makes our website very easy to navigate these wide choices. Our homepage offers you a user-friendly and an up-to-date approach that will lead you to the product range. Our non-stop shopping will allow you to purchase drinks! We have added recipes of our drinks as well as videos (How to videos) We have produce our website as a team for our module called Team Project. In our team we have myself, David, Melba, John, Amit and Rahul.</span></p>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="test2">
+
+        <section>
+            <div class="inner">
+
+                <h1>Dont Miss Out!!</h1>
+                <br>
+                <img src="https://i.pinimg.com/736x/c9/a3/68/c9a3683981c92f35dcdf7fccfcb33e2b--jack-daniels-whisky.jpg" height="480" width="480">'
+
+                <p><span>Order pret</span></p>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -3,22 +3,27 @@
 
    /*making a horizontal list with spacing /no bullet points */
  li  {
- display: inline;
-  float: left;
-  margin-right: 1px;
+    display: inline;
+     float: right;
+    list-style: none;
      
 }
 
 
  /* specifications for navigation  = colour black background*/ 
 #nav{
-  font-family: Verdana,Arial;
+  font-family: "Lato","Verdana",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     list-style-type: none;
     margin: 0;
     overflow: hidden;
     border-radius: 0px;
     color: #fff;
     border-radius: 0px;
+  text-decoration:none;
+    padding: 10px;
+
 
 } 
 
@@ -26,6 +31,7 @@
 #nav a:hover {
 /*  background: #000;*/
     color: #1aa6c9;
+    
     
 }
 
@@ -82,7 +88,7 @@ li.dropdown {
 .dropdown-content a {
     color: #ffffff;
     padding: 12px 16px;
-    text-decoration: none;
+   text-decoration: none;
     display: block;
     text-align: left;
 }
@@ -131,10 +137,12 @@ li.dropdown {
   ul {
     position: static;
     display: none;
+      
   }
   
   li {
     margin-bottom: 1px;
+        list-style: none;
       
   }
   /* navigation links to full width*/
@@ -146,44 +154,20 @@ li.dropdown {
   /*Display 'show nav' link*/
   .show-nav {
     display:block;
-      float: left;
+      margin-left: 20px;
+      float: inherit;
+      padding: 26px;
   }
   /* hiding the logo when the navigation is collapsed*/
   .logo{
-   display: none;
+       text-decoration: none;
+
+
   }
 }
 
 
-/*spec for user/admin account display table data*/
 
-table{
-   width: 100%;
-background-color: white;
-font-size: 20px;
-border: 1px solid black;
-
-}
-
-
-td{
-  color: black;
-    border-left: 1px solid black;
-     border-right: 1px solid black;
-    border-top: 1px solid black;
-  }
-/*spec for admin account display table edit and delete function colours*/
-
-.delete{
-  color: red;
-}
-.edit{
-  color: orange;
-}
-/*spec for admin account - display table data*/
-.tbl{
-  font-weight: bold;
-}
 
 
 /*-------------------------------END OF MELBA CSS --------------*/
@@ -220,7 +204,7 @@ header {
     position: fixed;
     width: 100%;
     padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   background: rgba(0,0,0,0.8);
   transition: 0.7s all;
   z-index: 100;
@@ -339,7 +323,9 @@ div#slider figure {
   font-size: 50px;
   line-height: 50px;
   transition: 0.7s all;
-    padding-top: 50px;
+text-decoration: none;
+    padding: 20px;
+
 }
 
 
@@ -350,7 +336,7 @@ ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   margin: 0;
-  padding: 0;
+ 
    
 }
 
@@ -455,4 +441,20 @@ body{
   .section:after {
       height: 50px;
   }
+}
+
+
+
+
+
+
+
+::selection {
+  background: #000;
+  color: #aaf;
+}
+
+.alternate ::selection {
+  background: #c00;
+  color: #000;
 }

@@ -13,7 +13,7 @@
                     
                          <link rel="stylesheet" href="css/normalize.css">
                          <!-- link to style sheet -->
-                         <link rel="stylesheet" href="css/nonfloatTest7.css" type="text/css">
+                         <link rel="stylesheet" href="css/nonfloatTest8.css" type="text/css">
                          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                          <!-- link to style sheet for nav show-->
                          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -115,7 +115,7 @@ $products = array(
         'itemID'=> 1,
 		'name' => 'Jack Daniel',
 		'price' => 28.99,
-		'category' => 'whiskey',
+		'category' => 'Whiskey',
 		'description' => 'Jack Daniels is a brand of Tennessee whiskey and the top selling American whiskey in the world',
         'dinkIcon' => '<img src="https://i.pinimg.com/736x/c9/a3/68/c9a3683981c92f35dcdf7fccfcb33e2b--jack-daniels-whisky.jpg" height="480" width="480">'
 
@@ -123,7 +123,7 @@ $products = array(
 	2 => array(
 		'name' => 'Jim Bean',
 		'price' => 24.99,
-		'category' => 'whiskey',
+		'category' => 'Whiskey',
 		'description' => 'Jim Beam is a brand of bourbon whiskey produced in Clermont, Kentucky',
         'dinkIcon' => '<img src="images/jim_beam.jpg" height="480" width="480">'
 
@@ -132,7 +132,7 @@ $products = array(
 	3 => array(
 		'name' => 'Jameson',
 		'price' => 11.99,
-		'category' => 'whiskey',
+		'category' => 'Whiskey',
 		'description' => 'Jameson is a blended Irish whiskey produced by the Irish Distillers subsidiary of Pernod Ricard.',
         'dinkIcon' => '<img src="https://img.idlassets.com/prod/Product/153/promo/1/promo_384x384.jpg" height="480" width="480">'
 
@@ -166,7 +166,7 @@ $products = array(
 	7 => array(
 		'name' => 'Chivas Regal',
 		'price' => 35.99,
-		'category' => 'whiskey',
+		'category' => 'Whiskey',
 		'description' => 'Chivas Regal is a blended Scotch whisky produced by Chivas Brothers, which is part of Pernod Ricard',
         'dinkIcon' => '<img src="images/chivasregal.jpg"  height="480" width="480" >'
 
@@ -182,7 +182,7 @@ $products = array(
      9 => array(
 		'name' => 'Fireball Whiskey',
 		'price' => 14.99,
-		'category' => 'whiskey',
+		'category' => 'Whiskey',
 		'description' => 'Fireball Cinnamon Whisky is a mixture of whisky, cinnamon flavoring and sweeteners that is produced by the Sazerac Company',
         'dinkIcon' => '<img src="images/fireball.jpg" height="480" width="480">'
 
