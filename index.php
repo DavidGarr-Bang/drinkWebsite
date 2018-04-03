@@ -65,7 +65,7 @@ if(isset($_POST['update_cart'])) {
 		$_SESSION['shopping_cart'][$id]['quantity'] = $quantity;
 	}
 	if(!$message) {
-		$message = "Cart updated!<br />";
+		$message = "Cart updated!<br>";
 	}
 }
 
@@ -170,7 +170,7 @@ else if(isset($_GET['view_cart'])) {
 					echo "
                 
                 
-                 <tr class='productitm'>
+            <tr class='productitm'>
             <td><img src='https://i.imgur.com/8goC6r6.png' class='thumb'></td>
             <td><input type='number' value=". $product['quantity'] ." min='0' max='99' class='qtyinput'></td>
             <td><a href='./index.php?view_product=$id' style=' color: #1aa6c9;'>" . $products[$product_id]['name'] . "</a></td>
@@ -187,9 +187,15 @@ else if(isset($_GET['view_cart'])) {
 			echo " 
           <tr class'checkoutrow'>
             <td colspan='6' class='checkout'>
-       
-<button style=' margin: 2em 0 0; margin-bottom: 20px;  background-color: #000; color:#fff;'  onclick='location.href='http://www.hyperlinkcode.com/button-links.php'' class='button button2'>Checkout</button>
-</a>
+            
+    
+
+
+<div class='comone'>
+
+<a href='/index.php?checkout=1' class='button'>Check out</a>
+
+</div>
           </td>
           </tr>
         </tbody>
@@ -244,13 +250,7 @@ else if(isset($_GET['checkout'])) {
                     
                     
                 }
-                        //    $query="SELECT * FROM item WHERE itemId = 1 ";
-
-
-         
-                    $query = "SELECT itemName FROM item WHERE itemId = 1 ";
-                    
-                    $data = selectitem($query);//calls function in the connection page above
+                        //   $query="SELECT * FROM item WHERE itemId = 1 ";
         
         
         
@@ -258,10 +258,48 @@ else if(isset($_GET['checkout'])) {
 			<p  style=' color: #fff;'> Total price: £" . $total_price . "</p>";
         
         
-//         if(!empty($data)):
-//         foreach ($data as $user):
         
-          echo " <p  style=' color: #fff':>" .  $data . "</p>";
+        $query = "SELECT itemName FROM item WHERE itemId = 1 ";
+                    
+        $data = selectitem($query);//calls function in the connection page above
+        
+        
+        
+        
+//        if(!empty($data)):
+        
+        
+        foreach($data as $user){ 
+            
+            echo "
+           
+			<p  style=' color: #fff;'> ??? " . $user['itemName'] . "</p>
+            
+            <br>";
+    
+}
+
+//
+//        
+//        
+//      
+//        echo " <p  style=' color: #fff':>" . $user['itemName']; ."</p>";
+//        
+//        
+//        echo "<table>";
+//        
+//        echo"<td>itemName</td>";
+//        
+//        
+//       
+//        echo"<td>" $user['itemNane'] "</td>";
+//     //   echo"<td>" $user['categoryID'];"</td>";
+//
+//     
+//        echo "</table>";
+//        
+   
+        
 		
 	}
 }
@@ -275,7 +313,7 @@ else {
     
         
         echo "<div class='pic'>";
-       echo "<a href='./index.php?view_product=$id'> " . $product['dinkIcon'] ." </a> ";
+        echo "<a href='./index.php?view_product=$id'> " . $product['dinkIcon'] ." </a> ";
         
          //    echo  "<a href='./index.php?view_product=$id'> "<img src= '. $product['dinkIcon'] .' width='200' height='200'/> </a>"";
 

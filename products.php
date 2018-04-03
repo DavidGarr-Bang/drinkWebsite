@@ -9,11 +9,11 @@
                     
                          <link rel="shortcut icon" href="img/favicon.ico">
                     
-                     <link rel="stylesheet" href="css/shopping-cart_icon-css.css" type="text/css">
+                        <link rel="stylesheet" href="css/shopping-cart_icon-css.css" type="text/css">
                     
                          <link rel="stylesheet" href="css/normalize.css">
                          <!-- link to style sheet -->
-                         <link rel="stylesheet" href="css/nonfloatTest8.css" type="text/css">
+                         <link rel="stylesheet" href="css/shoppcsstest.css" type="text/css">
                          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                          <!-- link to style sheet for nav show-->
                          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,15 +25,22 @@
 
       <header id="topnav">
           <div class="inner">
-              <div class="logo" ><a href="home.html">Beverages</a></div>
+        <div class="logo"><a href="home.html" style="  text-decoration:none;">Beverages</a></div>
                  <!-- navigation links to pages in my website -->
 <nav>
                           <label for="show-nav" class="show-nav"><i class="fa fa-align-justify" style="font-size:36px;"></i> </label>
                           <input type="checkbox" id="show-nav" role="button" class="navcheck">
                           <ul id="nav">
                  
+                              
+                              
+                              
+                              
+                                  <li>
+                             <a  href="./index.php?view_cart=1">  <i class='fa fa-shopping-basket cart-icon'></i>
+                             </a></li>    
                           <!-- link to html pages -->
-                          <li><a  href="home.html">Home</a></li>
+                         
                           <li class="dropdown">
                           <a href="#" class="dropbtn">Cocktails</a>
                           <div class="dropdown-content">
@@ -48,7 +55,7 @@
                               <a href="#">item 2</a>
                           </div>
                           </li>
-                          <li><a  href="#.html">Sale</a></li>
+                          <li><a  href="/index.php?checkout=1">Sale</a></li>
                           <li><a  href="loginazuser.php">Login</a></li>
                             <li><a  href="index.php">Shop</a></li>
                               <?php  
@@ -62,23 +69,8 @@
  
  ?>  
                               
-                              
-                              
-                              
-                              
-                                <li><a  href="loginazuser.php">log out</a></li>
 
-                         <li>
-                             <a  href="./index.php?view_cart=1">  <div class="icon-cart" style="float: left">
-    <div class="cart-line-1" style="background-color: #E5E9EA"></div>
-    <div class="cart-line-2" style="background-color: #E5E9EA"></div>
-    <div class="cart-line-3" style="background-color: #E5E9EA"></div>
-    <div class="cart-wheel" style="background-color: #E5E9EA"></div>
-  </div>
-                             </a></li>    
-                        
-                              
-                              
+                               <li><a  href="home.html">Home</a></li>
                           </ul>
 
                  </nav>
@@ -121,6 +113,7 @@ $products = array(
 
 	),
 	2 => array(
+          'itemID'=> 1,
 		'name' => 'Jim Bean',
 		'price' => 24.99,
 		'category' => 'Whiskey',
@@ -130,6 +123,7 @@ $products = array(
        
 	),
 	3 => array(
+          'itemID'=> 2,
 		'name' => 'Jameson',
 		'price' => 11.99,
 		'category' => 'Whiskey',
@@ -138,6 +132,7 @@ $products = array(
 
 	),
     4 => array(
+          'itemID'=> 3,
 		'name' => 'JagerMeister',
 		'price' => 10.99,
 		'category' => 'Cocktail',
@@ -147,6 +142,7 @@ $products = array(
 	),
     
     5 => array(
+          'itemID'=> 5,
 		'name' => 'Skyy Vodka',
 		'price' => 19.99,
 		'category' => 'Cocktail',
@@ -155,6 +151,7 @@ $products = array(
 
 	),
 	6 => array(
+          'itemID'=> 6,
 		'name' => 'Belvedere',
 		'price' => 30.85,
 		'category' => 'Cognac',
@@ -164,6 +161,7 @@ $products = array(
        
 	),
 	7 => array(
+          'itemID'=> 7,
 		'name' => 'Chivas Regal',
 		'price' => 35.99,
 		'category' => 'Whiskey',
@@ -172,6 +170,7 @@ $products = array(
 
 	),
     8 => array(
+          'itemID'=> 8,
 		'name' => 'Bombay Sapphire',
 		'price' => 21.99,
 		'category' => 'gin',
@@ -180,6 +179,7 @@ $products = array(
 
 	),
      9 => array(
+           'itemID'=> 9,
 		'name' => 'Fireball Whiskey',
 		'price' => 14.99,
 		'category' => 'Whiskey',

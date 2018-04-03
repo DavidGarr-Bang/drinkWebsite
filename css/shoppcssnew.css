@@ -4,8 +4,8 @@
    /*making a horizontal list with spacing /no bullet points */
  li  {
  display: inline;
-  float: left;
-  margin-right: 1px;
+  float: right;
+   list-style: none;
      
 }
 
@@ -51,7 +51,7 @@ padding: 14px 16px;
 }
 
 nav a:hover {
-    color: #1aa6c9;
+  color: black;
     
 }
 
@@ -148,40 +148,19 @@ li.dropdown {
   /*Display 'show nav' link*/
   .show-nav {
      display:block;
-      margin-left: 20px;
+      margin-left: 200px;
       float: inherit;
       padding: 26px;
   }
   /* hiding the logo when the navigation is collapsed*/
   .logo{
-   display: none;
+            
+       text-decoration: none;
+
   }
 }
 
 
-/*spec for user/admin account display table data*/
-
-table{
-   width: 100%;
-background-color: white;
-font-size: 20px;
-border: 1px solid black;
-
-}
-
-
-/*spec for admin account display table edit and delete function colours*/
-
-.delete{
-  color: red;
-}
-.edit{
-  color: orange;
-}
-/*spec for admin account - display table data*/
-.tbl{
-  font-weight: bold;
-}
 
 
 /*-------------------------------END OF MELBA CSS --------------*/
@@ -331,12 +310,13 @@ div#slider figure {
 }
 
 .logo {
-  float: left;
-  color: #fff;
-  font-size: 50px;
-  line-height: 50px;
-  transition: 0.7s all;
-    padding-top: 50px;
+    float: left;
+    color: #fff;
+    font-size: 50px;
+    line-height: 50px;
+    transition: 0.7s all;
+    text-decoration: none;
+    padding: 20px;
 }
 
 
@@ -438,7 +418,9 @@ p.item_dec {
     &:hover }
       
 .product-img:hover {      
-    transform: scale(1.03); 
+    -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 
@@ -495,6 +477,11 @@ button {
   border-radius: 19px;
   transition: all 0.3s linear;
   margin-left: 100px;
+    
+    
+    
+    
+    
    
 }
 
@@ -698,6 +685,41 @@ td.checkout {
   text-align: right;
    
 }
+
+
+a.button {
+  
+
+    text-decoration: none;
+    color: black;
+    
+    margin: 2em 0 0;
+    margin-bottom: 20px;
+    
+    
+     margin: 2em 0 0;
+    align-content: center;
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    
+    
+    
+    
+    
+}
+
+
+
 
 
 
