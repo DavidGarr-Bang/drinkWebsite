@@ -24,4 +24,18 @@ function updateitem($query){
     return $stmt->execute();
 }
 
+
+
+
+//insert new data entered by the user into the item table in the database
+function insertitem($query){
+    $pdo=getCon();
+    
+    $stmt=$pdo->prepare($query);
+    return $stmt->execute();
+}
+
+
+
+
 ?>

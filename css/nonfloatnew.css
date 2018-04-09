@@ -4,8 +4,8 @@
    /*making a horizontal list with spacing /no bullet points */
  li  {
  display: inline;
-  float: left;
-  margin-right: 1px;
+  float: right;
+   list-style: none;
      
 }
 

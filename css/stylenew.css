@@ -1,24 +1,20 @@
 /*-------------------------------navigation --------------*/
 
 
-
-ol li {
-   
-}
-
    /*making a horizontal list with spacing /no bullet points */
-   ul li  {
+ li  {
  display: inline;
   float: right;
    list-style: none;
-     
      
 }
 
 
  /* specifications for navigation  = colour black background*/ 
 #nav{
-  font-family: Verdana,Arial;
+  font-family: "Lato","Verdana",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     list-style-type: none;
     margin: 0;
     overflow: hidden;
@@ -27,37 +23,21 @@ ol li {
     border-radius: 0px;
 
 } 
-
-
-#nav a:hover {
-/*  background: #000;*/
-    color: #1aa6c9;
-    
-}
-
 /*------ adding a colour background to current page on navigation bar-----*/
 li> a.active{
 /* background-color:  #99004d;*/
-  display: inline;
-  float: left;
-  margin-right: 1px;
 
 }
 
 
 #nav > li > a { 
-    
+
 text-decoration: none;
 font-size: 20px;
-display: inline-block;
+display: block;
 color: white;
 text-align: center;
-padding: 14px 16px;
-    
-}
-
-nav a:hover {
-    color: #1aa6c9;
+ padding: 14px 16px;
     
 }
 
@@ -65,7 +45,7 @@ nav a:hover {
 li a:hover{
    
 /*    background-color: #ff3300;*/
-    color: black;
+    color: #4286f4;
     }
 
 /* -------------dropdown links on nav ----------*/
@@ -97,8 +77,6 @@ li.dropdown {
 
 .dropdown-content a:hover {
 /*    background-color:  #ff3300*/
-    
-    color: aqua;
 }
 
 .dropdown:hover .dropdown-content {
@@ -108,13 +86,13 @@ li.dropdown {
 
 .dropdown-content .active{
  background-color: white;
-   
 
 }
 
 /* ------   hiding nav -----------*/
 .show-nav {
     color: white;
+    background: #000;
     padding-bottom: 3px;
     padding-left: 7px;
     padding-top: 5px;
@@ -142,43 +120,72 @@ li.dropdown {
   
   li {
     margin-bottom: 1px;
-      
   }
   /* navigation links to full width*/
   li  {
     width: 100%;
-      color: white;
   }
   
   /*Display 'show nav' link*/
   .show-nav {
-    display:block;
-      float: left
+     display:block;
+      margin-left: 200px;
+      float: inherit;
+      padding: 26px;
   }
   /* hiding the logo when the navigation is collapsed*/
   .logo{
-   display: none;
+     display:none;
   }
+}
+
+
+
+header {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background: #000;
+    transition: 0.7s all;
+    z-index: 100;
+    color: white;
+}
+
+.logo {
+    float: left;
+    color: #fff;
+    font-size: 50px;
+    line-height: 50px;
+    transition: 0.7s all;
+    text-decoration: none;
+    padding: 20px;
 }
 
 
 /*spec for user/admin account display table data*/
 
-table{
-   width: 100%;
-background-color: white;
-font-size: 20px;
-border: 1px solid black;
-
+/*Responsive table*/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: #34495e; 
+  color: #f3f3f3;
 }
 
+td, th { 
+  padding: 8px; 
+  text-align: left; 
+}
 
-td{
-  color: black;
-    border-left: 1px solid black;
-     border-right: 1px solid black;
-    border-top: 1px solid black;
-  }
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background-color: aqua; 
+}
+
+th { 
+  background: #2c3e50; 
+  font-weight: bold; 
+}
 /*spec for admin account display table edit and delete function colours*/
 
 .delete{
@@ -198,35 +205,37 @@ td{
 
 
 
-.title {
+
+
+
+
+
+
+
+
+body {
+  background-color: black;
+  font-family: 'Open Sans','PT Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+h1.title {
   font-weight: 500;
   margin: 0 0 30px;
 }
 .bucket {
-   
-    background:#fff;
-    float: left;
-    width: auto;
-    margin: 26px ;
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.4);
+  background:#fff;
+  width: 450px;
+  margin: 50px auto;
+  box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
 
 }
 
 .buffer {
-   padding: 10px;
-    
-    
+   padding: 40px;
 }
 
-header {
-   
-    width: 100%;
-    padding-top: 40px;
-    padding-bottom: 20px;
-  background: #000;
-  transition: 0.7s all;
-  z-index: 100;
-    color: white;
+.header {
+  text-align:center;
 }
 .clearfix { 
   clear: both; 
@@ -283,170 +292,34 @@ input.btn {
   border-bottom: 1px dotted #8c8c8c;
 }
 
-
-
-
-.button {
-    margin: 2em 0 0;
+a.button {
+  display: block;
+background-color: white;
+    text-decoration: none;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+   
+    width: 300px;
+    
+    
+   
     align-content: center;
-    background-color: black; /* Green */
+ 
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-}
-
-.button2:hover {
-     
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-
-
-@keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
-}
-
-body { margin: 0; } 
-div#slider { overflow: hidden; }
-div#slider figure img { width: 20%; float: left; }
-div#slider figure { 
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 28s slidy infinite; 
-    color: #000;
-}
-
-.logo {
-  float: left;
-  color: #fff;
-  font-size: 50px;
-  line-height: 50px;
-  transition: 0.7s all;
-    padding-top: 50px;
-}
-
-
-
-ul,  h3, h4, h5, h6, a, .logo {
-  font-family: "Lato","Verdana",sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-}
-
-
-.inner {
-  width: 1400px;
-  position: relative;
-  margin: 0 auto;
+    
+    
+    
+    
     
 }
-
-
-.pic {
-    float:left;
-    position: relative;
-    width: 260px;
-    overflow: hidden;
-    margin-left: 60px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border: solid 2px black;
-    box-shadow: 0px 10px 5px rgba(0,0,0,0.5)
-}
-
-.text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 260px;  
-  height: 0;
-  text-align: center;    
-  background: rgba( 26,166, 201, 0.7);
-  transition: height 0.7s ease-out;    
-}
-
-.pic:hover > .text {
-  height: 120px;
-    
-}
-
-
-p.item_name {
-   color: white;
-    font-weight: bold;
-}
-
-p.item_dec {
-   color: white;
-    
-}
-
-
-@import url(https://fonts.googleapis.com/css?family=Archivo+Black);
-
-@media only screen and (max-device-width: 480px) {
-  .box {
-    margin: 20px;
-  }
-  .product-info {
-    margin: 20px;
-  }
-}
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  
-  font-family: 'Open Sans', sans-serif;
-}
-
-
-.box {
-  width: 700px;
-  border-radius: 10px;
-  
-}
-
-.product-img {
-  float: left;
-  margin-top: 20px;
-  transition: all 0.5s linear;
-    &:hover }
-      
-.product-img:hover {      
-    transform: scale(1.03); 
-}
-
-
-.product-info {
-  float: right;
-  margin-top: 20px;
-  margin-right: 40px;
-}
-
-
-

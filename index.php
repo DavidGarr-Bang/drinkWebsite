@@ -1,5 +1,3 @@
-
-
 <?php
 
 
@@ -141,7 +139,7 @@ else if(isset($_GET['view_cart'])) {
 	
 	echo "
 	<p>
-		<a href='./index.php?empty_cart=1'>Empty Cart</a>
+		
 	</p>";
 	
 	if(empty($_SESSION['shopping_cart'])) {
@@ -154,7 +152,7 @@ else if(isset($_GET['view_cart'])) {
       <table id='cart'>
         <thead>
           <tr>
-            <th class='first'>Photo</th>
+            
             <th class='second'>Qty</th>
             <th class='third'>Product</th>
             <th class='fourth'>Category</th>
@@ -171,7 +169,7 @@ else if(isset($_GET['view_cart'])) {
                 
                 
             <tr class='productitm'>
-            <td><img src='https://i.imgur.com/8goC6r6.png' class='thumb'></td>
+          
             <td><input type='number' value=". $product['quantity'] ." min='0' max='99' class='qtyinput'></td>
             <td><a href='./index.php?view_product=$id' style=' color: #1aa6c9;'>" . $products[$product_id]['name'] . "</a></td>
             <td>" . $products[$product_id]['category'] ."</td>
@@ -195,6 +193,8 @@ else if(isset($_GET['view_cart'])) {
 
 <a href='/index.php?checkout=1' class='button'>Check out</a>
 
+<a href='./index.php?empty_cart=1' class='button'>Empty Cart</a>
+
 </div>
           </td>
           </tr>
@@ -204,9 +204,7 @@ else if(isset($_GET['view_cart'])) {
   </div>
   
   
-  <p>
-			
-			</p>
+  
 ";
 		
 	}
@@ -223,6 +221,10 @@ else if(isset($_GET['checkout'])) {
 		echo "Your cart is empty.<br />";
 	}
 	else {
+        
+      
+        
+        
 		echo "<form action='./index.php?checkout=1' method='post'>
 		<table style='width:500px;' cellspacing='0'>
 				<tr>
@@ -230,78 +232,118 @@ else if(isset($_GET['checkout'])) {
 					<th style='border-bottom:1px solid #000000;'>Item Price</th>
 					<th style='border-bottom:1px solid #000000;'>Quantity</th>
 					<th style='border-bottom:1px solid #000000;'>Cost</th>
-                    <th style='border-bottom:1px solid #000000;'>Cost</th>
+                    
 				</tr>";
 				
 				$total_price = 0;
 				foreach($_SESSION['shopping_cart'] as $id => $product) {
+                   
+                    
+                    
 					$product_id = $product['product_id'];
 					
 					
 					$total_price += $products[$product_id]['price'] * $product['quantity'];
-					echo "<tr>
+					echo "
+                    
+                    
+                     <tr class='productitm'>
+          
+            <td><input type='number' value=". $product['quantity'] ." min='0' max='99' class='qtyinput'></td>
+            <td><a href='./index.php?view_product=$id' style=' color: #1aa6c9;'>" . $products[$product_id]['name'] . "</a></td>
+            <td>" . $products[$product_id]['category'] ."</td>
+            <td>" . $products[$product_id]['price'] ."</td>
+            
+          </tr>
+                    
+                    
+                    
+                    <tr>
 						<td style='border-bottom:1px solid #000000;'><a href='./index.php?view_product=$id'>" . $products[$product_id]['name'] . "</a></td>
 						<td style='border-bottom:1px solid #000000;'>£" . $products[$product_id]['price'] . "</td> 
 						<td style='border-bottom:1px solid #000000;'>" . $product['quantity'] . "</td>
 						<td style='border-bottom:1px solid #000000;'>£" . ($products[$product_id]['price'] * $product['quantity']) . "</td>
-						<td style='border-bottom:1px solid #000000;'>£" . $products[$product_id]['itemID'] . "</td>
+						
 
-					</tr>";
+					";
                     
                     
-                }
-                        //   $query="SELECT * FROM item WHERE itemId = 1 ";
-        
-        
-        
-			echo "</table>
-			<p  style=' color: #fff;'> Total price: £" . $total_price . "</p>";
-        
-        
-        
-        $query = "SELECT itemName FROM item WHERE itemId = 1 ";
+                  
+        $query = "SELECT itemName FROM item WHERE itemId = ". $products[$product_id]['itemID'] ." ";
                     
         $data = selectitem($query);//calls function in the connection page above
         
-        
-        
-        
-//        if(!empty($data)):
-        
-        
-        foreach($data as $user){ 
+
+        foreach( $data as  $user){ 
+                          
             
-            echo "
-           
-			<p  style=' color: #fff;'> ??? " . $user['itemName'] . "</p>
+//        echo " <td style='border-bottom:1px solid #000000; color:white;'>  " . $user['itemName'] . "</td> </tr>";
+       
             
-            <br>";
+         
+        $amounnt =  $product['quantity'];
+            
+            
+        $email =  $_SESSION["email"];
+        
+        
+        $currentDateTime = date("j of F Y, \a\\t g.i a", time());
+        
+
+        $item = $user['itemName'];
+        
+
+        
+        if(isset($_POST['submit'])){
+        
+        $SQL = "INSERT INTO purchase (email, Purchasesdate, item , amount) VALUES (' $email ', ' $currentDateTime ', '$item', $amounnt)";
+
+        $result = insertitem($SQL);
+        
+        }
+        
+            
+            
+            
+            
+            
+        
+        }
+                   
+        }
+             
+        
+  
+        
+        
+        
+     echo "
+            
+             </table>
+			<p  style=' color: #fff;'> Total price: £"  	. $total_price . "</p>";   
+        
+        
+    echo "<form method='post'>
+        
+    <input type='submit' name='submit' value='Make payment'/>  </form>";
+        
+        
+        
+        
+    $currentDateTime = date("j of F Y, \a\\t g.i a", time());
+        
+        
+ //  show date time stamp
+        
+ //  echo " <p  style=' color: #fff;'> Time " . $currentDateTime . "</p>";
+        
+        
+ //   echo " <p  style=' color: #fff;'> email " . $email . "</p>";
     
 }
-
-//
-//        
-//        
-//      
-//        echo " <p  style=' color: #fff':>" . $user['itemName']; ."</p>";
-//        
-//        
-//        echo "<table>";
-//        
-//        echo"<td>itemName</td>";
-//        
-//        
-//       
-//        echo"<td>" $user['itemNane'] "</td>";
-//     //   echo"<td>" $user['categoryID'];"</td>";
-//
-//     
-//        echo "</table>";
-//        
-   
-        
-		
-	}
+    
+    
+       
 }
 // View all products
 else {
@@ -326,7 +368,6 @@ else {
         
         echo "</div>";
         echo "</div>";
-        
         
         
 	}

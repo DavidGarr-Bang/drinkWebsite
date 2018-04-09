@@ -1,8 +1,8 @@
 <?php
 //connect to database 
-$host = "localhost";
-$username ="dbuser";
-$password ="password";
+$host = "localhost:8889";
+$username ="root";
+$password ="root";
 $database = "BeveragesDB";
 
 try
@@ -62,7 +62,7 @@ catch(PDOException $error)
                             <!-- link to javascript doc.-->
 
 
-   
+    </head>
 
 <body>
     
@@ -75,7 +75,7 @@ catch(PDOException $error)
                           <ul id="nav">
                  
                           <!-- link to html pages -->
-                          <li><a  href="#">Home</a></li>
+                          <li><a  href="home.html">Home</a></li>
                           <li class="dropdown">
                           <a href="#" class="dropbtn">Cocktails</a>
                           <div class="dropdown-content">
@@ -83,18 +83,11 @@ catch(PDOException $error)
                               <a href="#">drink 2</a>
                          </div>
                           </li>
-                          <li><a href="#" class="dropbtn">drink</a></li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Drinks</a>
-                          <div class="dropdown-content">
-                              <a href="#">item 1</a>
-                              <a href="#">item 2</a>
-                          </div>
-                          </li>
+                         
                           <li><a  href="#.html">Sale</a></li>
-                           <li><a  href="signup.php">Sign Up</a></li>
+                         
                           <li><a  href="loginazuser.php">Login</a></li>
-                          <li><a  href="loginazadmin.php">Admin</a></li>
+                        
                           </ul>
                  </nav>
 
@@ -152,6 +145,7 @@ catch(PDOException $error)
 </form>
 
 </body>
+   
 </html>
 
 

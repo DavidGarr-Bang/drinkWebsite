@@ -33,9 +33,6 @@
                           <ul id="nav">
                  
                               
-                              
-                              
-                              
                                   <li>
                              <a  href="./index.php?view_cart=1">  <i class='fa fa-shopping-basket cart-icon'></i>
                              </a></li>    
@@ -48,29 +45,27 @@
                               <a href="PlantersPunch.html">Planters Punch</a>
                          </div>
                           </li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Drinks</a>
-                          <div class="dropdown-content">
-                              <a href="#">item 1</a>
-                              <a href="#">item 2</a>
-                          </div>
-                          </li>
+                          
                           <li><a  href="/index.php?checkout=1">Sale</a></li>
-                          <li><a  href="loginazuser.php">Login</a></li>
-                            <li><a  href="index.php">Shop</a></li>
+                         
+                           
                               <?php  
- //login_success.php  
+  
  session_start();  
  if(isset($_SESSION["email"]))  
  {  
-      echo '<li><a  href="login_usersuccess.php"> '.$_SESSION["email"].'</li>';  //displays the email address of the user logged in 
+      echo '<li><a  href="login_usersuccess.php"> '.$_SESSION["email"].'</li>'; 
      
  }  
  
  ?>  
                               
+                              
+                              
+                              
+                          <li><a  href="index.php">Shop</a></li>
 
-                               <li><a  href="home.html">Home</a></li>
+                          <li><a  href="home.html">Home</a></li>
                           </ul>
 
                  </nav>
@@ -113,7 +108,7 @@ $products = array(
 
 	),
 	2 => array(
-          'itemID'=> 1,
+          'itemID'=> 2,
 		'name' => 'Jim Bean',
 		'price' => 24.99,
 		'category' => 'Whiskey',
@@ -123,7 +118,7 @@ $products = array(
        
 	),
 	3 => array(
-          'itemID'=> 2,
+          'itemID'=> 3,
 		'name' => 'Jameson',
 		'price' => 11.99,
 		'category' => 'Whiskey',
@@ -132,7 +127,7 @@ $products = array(
 
 	),
     4 => array(
-          'itemID'=> 3,
+          'itemID'=> 4,
 		'name' => 'JagerMeister',
 		'price' => 10.99,
 		'category' => 'Cocktail',

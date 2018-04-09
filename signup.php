@@ -186,6 +186,8 @@ catch(PDOException $error)
         <div class="form-footer">
            
     <p><a href="loginazuser.php">Use account to  sign in</a></p>
+            
+   <p><a href="loginazadmin.php">Sign in as Admin</a></p>
    
     
   </div>

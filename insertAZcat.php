@@ -1,8 +1,8 @@
 <?php
 //connect to database 
 $host = "localhost:8889";
-$username ="dbuser";
-$password ="password";
+$username ="root";
+$password ="root";
 $database = "BeveragesDB";
 
 try
@@ -116,12 +116,6 @@ catch(PDOException $error)
 <!-- footer containing copyright  -->
             <br><br><br>
                
-           <footer id= footer>
-                   &copy;Student ID - 21286928. <br>
-                   AzaleaFlowers.com <br>
-                   Email:azaleaflowers@hotmail.com<br> 
-                   Call us at: 07477278836<br>
-                      
-           </footer>
+          
 </body>
 </html>

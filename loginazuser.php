@@ -54,7 +54,7 @@
                             <link rel="shortcut icon" href="img/favicon.ico">
                             <!-- link to style sheets --> 
                             <link rel="stylesheet" href="css/normalize.css">
-                            <link rel="stylesheet" href="css/nonfloatnew.css">
+                            <link rel="stylesheet" href="css/nonfloatnew1.css">
                             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                             <!-- link to style sheet for nav show-->
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -91,7 +91,7 @@ body, html {
 
      <header id="topnav">
           <div class="inner">
-              <div class="logo" ><a href="home.html">Beverages</a></div>
+        <div class="logo"><a href="home.html" style="  text-decoration:none;">Beverages</a></div>
 
 
                       <!-- navigation links to pages in my website -->
@@ -101,24 +101,20 @@ body, html {
                           <ul id="nav">
                  
                           <!-- link to html pages -->
-                          <li><a  href="home.html">Home</a></li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Cocktails</a>
-                          <div class="dropdown-content">
-                              <a href="#">Cocktail 1</a>
-                              <a href="#">Cocktail 2</a>
-                         </div>
-                          </li>
+                        
+                           <li class="dropdown">
+                    <a href="Comparetable.html" class="dropbtn">Cocktails</a>
+                    <div class="dropdown-content">
+                        <a href="TequilaSunrise.html">Tequila Sunrise</a>
+                        <a href="PlantersPunch.html">Planters Punch</a>
+                    </div>
+                </li>
                          
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Drinks</a>
-                          <div class="dropdown-content">
-                              <a href="#">Drink 1</a>
-                              <a href="#">Drink 2</a>
-                          </div>
-                          </li>
+                         
                           <li><a  href="#.html">Sale</a></li>
                           <li><a  href="loginazuser.php">Login</a></li>
+                              
+                          <li><a  href="home.html">Home</a></li>
                           </ul>
                  </nav>
          </div>

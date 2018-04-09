@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
  <head>         
-                            <title>BeveragesDB</title>
+                            <title>Beverages edit Drinks</title>
                             <meta charset="utf-8">
                               <!--  link to favicon -->
                               <link rel="shortcut icon" href="img/favicon.ico">
                               <!-- link to style sheets --> 
                             <link rel="stylesheet" href="css/normalize.css">
-                            <link rel="stylesheet" href="css/style.css" type="text/css">
+                            <link rel="stylesheet" href="css/stylenew.css" type="text/css">
                             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                             <!-- link to style sheet for nav show-->
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,25 +33,12 @@
                  
                           <!-- link to html pages -->
                           <li><a  href="#">Home</a></li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Cocktails</a>
-                          <div class="dropdown-content">
-                              <a href="#">drink 1</a>
-                              <a href="#">drink 2</a>
-                         </div>
-                          </li>
-                          <li><a href="#" class="dropbtn">drink</a></li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Drinks</a>
-                          <div class="dropdown-content">
-                              <a href="#">item 1</a>
-                              <a href="#">item 2</a>
-                          </div>
-                          </li>
+                         
+                         
                           <li><a  href="#.html">Sale</a></li>
-                           <li><a  href="signup.php">Sign Up</a></li>
+                         
                           <li><a  href="loginazuser.php">Login</a></li>
-                          <li><a  href="loginazadmin.php">Admin</a></li>
+                        
                           </ul>
                  </nav>
 
@@ -67,7 +54,9 @@
    <!--  links to pages to allow user to navigate to previous pages -->
 
 
-<h2><a href="login_success.php">Back to Admin main page</a></h2><br><br>
+<a href="login_success.php" class="button">Back to Admin main page</a>
+    <a href="indexitems.php"class='button'>View Items Data</a>
+
 
 
  <h2> <a href="indexitems.php">View data in item table</a></h2><br><br>
@@ -94,7 +83,7 @@ if (isset($_POST['submit'])) {
     
            $itemID = $_POST['itemID'];
        $categoryID = $_POST['categoryID'];
-         $itemCode = $_POST['itemCode'];
+     
          $itemName = $_POST['itemName'];
          $itemDesc = $_POST['itemDesc'];
             $price = $_POST['price'];
@@ -103,7 +92,7 @@ if (isset($_POST['submit'])) {
      
       //updating details for a particular id
 
-    $query = "UPDATE `item` SET `itemID`='" . $itemID . "',categoryID='" . $categoryID . "',itemCode='" . $itemCode. "',itemName='" . $itemName. "',itemDesc='" . $itemDesc. "',price='" . $price."', StockNumber='" . $StockNumber . "' , Purchases='" . $Purchases . "' WHERE itemID=".$id;
+    $query = "UPDATE `item` SET `itemID`='" . $itemID . "',categoryID='" . $categoryID . "',itemName='" . $itemName. "',itemDesc='" . $itemDesc. "',price='" . $price."', StockNumber='" . $StockNumber . "' , Purchases='" . $Purchases . "' WHERE itemID=".$id;
 
     $update = updateitem($query); //update item table
 
@@ -123,8 +112,7 @@ if (isset($_POST['submit'])) {
     <input type="text" name="itemID" value="<?php echo $user[0]['itemID']; ?>"> <br>
     <br><br> Category ID
     <input type="text" name="categoryID" value="<?php echo $user[0]['categoryID']; ?>"> <br>
-    <br><br>Item Code
-    <input type="text" name="itemCode" value="<?php echo $user[0]['itemCode']; ?>"> <br>
+   
     <br><br>Item Name
     <input type="text" name="itemName" value="<?php echo $user[0]['itemName']; ?>"> <br>
     <br><br>Item Description

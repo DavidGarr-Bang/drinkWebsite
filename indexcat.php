@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>         
-                            <title>BeveragesDB</title>
+                            <title>Category Details</title>
                             <meta charset="utf-8">
                               <!--  link to favicon -->
                               <link rel="shortcut icon" href="img/favicon.ico">
                               <!-- link to style sheets --> 
                             <link rel="stylesheet" href="css/normalize.css">
-                            <link rel="stylesheet" href="css/nonfloat.css" type="text/css">
+                            <link rel="stylesheet" href="css/adminnonfloat.css" type="text/css">
                             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                             <!-- link to style sheet for nav show-->
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,7 +21,7 @@
 
   <header id="topnav">
           <div class="inner">
-              <div class="logo" ><a href="home.html">Beverages</a></div>
+        <div class="logo"><a href="home.html" style="  text-decoration:none;">Beverages</a></div>
                       
                       <!-- navigation links to pages in my website -->
 
@@ -39,15 +39,8 @@
                               <a href="#">drink 2</a>
                          </div>
                           </li>
-                          <li><a href="#" class="dropbtn">drink</a></li>
-                          <li class="dropdown">
-                          <a href="#" class="dropbtn">Drinks</a>
-                          <div class="dropdown-content">
-                              <a href="#">item 1</a>
-                              <a href="#">item 2</a>
-                          </div>
-                          </li>
-                          <li><a  href="#.html">Sale</a></li>
+                        
+                          
                            <li><a  href="signup.php">Sign Up</a></li>
                           <li><a  href="loginazuser.php">Login</a></li>
                           <li><a  href="loginazadmin.php">Admin</a></li>
@@ -60,18 +53,18 @@
 <body>
 
   <!--________________ end of navigation___________________________ -->
-   <h3> Edit and Delete Category Details</h3>
+  
  <!--  links to pages to allow user to navigate to previous pages -->
 <!--link to insert data form for category table-->
 
 
-<h2><a href="login_success.php">Back to Admin main page</a></h2><br><br>
-<h3><a href="insertAZcat.php">Insert data into category</a><br><br></h3>
+<a href="login_success.php" class="button ">Back to Admin main page</a>
+<a href="insertAZcat.php" class="button">Insert data into category</a>
 
 <?php
 include './includecat/configcat.php';//link to connection page to connect to database
 
-$query = "SELECT * FROM category"; 
+$query = "SELECT categoryID, categoryName FROM category "; 
 $data = selectcategory($query);
 
 if(isset($_GET['deleteid'])){

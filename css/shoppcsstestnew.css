@@ -687,10 +687,7 @@ td.checkout {
 }
 
 
-td {
-  background-color: white;
-   
-}
+=
 
 
 a.button {
@@ -727,5 +724,7 @@ a.button {
 
 
 
-
+span{
+    color: black;
+}
 
